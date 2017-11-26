@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Merina Gray</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> </head>
+
+
+<body>
+    <input type="checkbox" id="sidebartoggler">
+    <div class="page-wrap">
+        <label for="sidebartoggler" class="toggle">
+            <div class="nav-icon cross">
+                <div class="span"></div>
+            </div>
+        </label>
+        <div class="overflow">
+            <div class="page-content">
+
+                <a href="index.html"> <img alt="Logo" class="logo" src="images/pic1.png"> </a>
+                <div class="fade-in" id="content">
+                    <h2> Get ready to make an impact.    </h2> </div>
+            </div>
+
+            <div class="bio">
+                <div class="text-wrap">
+                    <h3>Merina Gray </h3>
+<br>
+                    <p> Founder of Merina Gray Homeless Ministry. Aimed to provide to those in unfortunate circumstances </p>
+                </div>
+
+                <img class="face-pic" src="images/22528557_364807177275727_1653344920861639675_n.jpg" />
+
+                <div class="user">
+                    <h3>Our mission is to help those in need.</h3>
+                    <p>We are in the Orlando area, and are happy to help people with need! Located in the heart of Downtown Lake Eola area, we offer services 7 days a week. Stop by and get yourself a free haircut today!
+ </p>
+
+                </div>
+
+            </div>
+            <div class="pics">
+                <p>A picture is worth a thousand words.</p>
+                <div class="whatever">
+                    <img src="images/23244485_371604486595996_4261542273156339143_n.jpg" />
+                    <img src="images/16298446_10105893705059661_736422281350308050_n.jpg" />
+                    <img src="images/15826542_10211924876782474_2897066314134303771_n.jpg" />
+                    <img src="images/22853235_368753796881065_5461987757074335501_n.jpg" />
+                </div>
+
+
+            </div>
+            <div class="learn-more">
+                <p>Find us on<span><a href="https://www.facebook.com/MERINAROC/">Facebook</a></span></p>
+            </div>
+            <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+            <div class="footer">
+                <div class="navigation-footer">
+                    <ul>
+                        <li><a href="../Church/index.html">Home</a></li>
+                        <li><a href="../Church/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <p>For more information, call today at <span> (407) 749-4400</span>.</p>
+
+                <div class="social-media">
+
+                    <div class="icons">
+                        <a href="mailto:mgray331@gmail.com"><img src="images/iemail.png" /></a>
+                    </div>
+
+                </div>
+
+            </div>
+</div>
+
+
+
+        <div class="sidebar">
+            <ul>
+                <li><a href="../Resume/index.html">Home</a></li>
+                <li class="black-border"><a href="../Church/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="../Resume/index.html">Home</a></li>
+                <li class="black-border"><a href="../Church/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script>
+        $(function() {
+            var obj = document.querySelectorAll('.nav-icon');
+            for (var i = obj.length - 1; i >= 0; i--) {
+                var toggle = obj[i];
+                toggleactive(toggle);
+            }
+
+            function toggleactive(toggle) {
+                toggle.addEventListener("click", function() {
+                    if (this.classList.contains("active") === true) {
+                        this.classList.remove("active");
+                    } else {
+                        this.classList.add("active");
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        var sentence = $('div#content').text();
+
+        var words = sentence.split(' ');
+
+        var spanWords = [];
+
+        $(words).each(function(i, word) {
+            if ($.trim(word).length) {
+                var span = $('<span>');
+                span.text(word);
+                spanWords.push(span)
+                spanWords.push('&nbsp;')
+            }
+        });
+
+        $('div#content').html(spanWords)
+
+        var start = function(element) {
+            if (element.next().length) {
+                setTimeout(function() {
+                    element.css({
+                        color: "#fff"
+                    });
+                    start(element.next())
+                }, 1000);
+            }
+            element.css({
+                color: "#f00"
+            });
+        }
+
+        start($('div#content span:eq(0)'))
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('h1').animate({
+                    top: '330px'
+                }, {
+                    duration: 2000,
+                    queue: false
+                })
+                .animate({
+                    opacity: 1
+                }, {
+                    duration: 2000,
+                    queue: false
+                });
+
+            $('div#content').animate({
+                    top: '230px '
+                }, {
+                    duration: 2000,
+                    queue: false
+                })
+                .animate({
+                    opacity: 1
+                }, {
+                    duration: 2000,
+                    queue: false
+                });
+        });
+    </script>
+    <script type='text/javascript'>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#scroll').fadeIn();
+                } else {
+                    $('#scroll').fadeOut();
+                }
+            });
+            $('#scroll').click(function() {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 600);
+                return false;
+            });
+        });
+    </script>
+</body>
